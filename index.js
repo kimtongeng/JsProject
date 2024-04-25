@@ -39,11 +39,11 @@ function validatingPhoneNumber(){
         return false;
     }
     else if(!phone.value.match(validatePhone)){
-        document.querySelector(".errorPhone").innerHTML = "Phone Number most have only number";
+        document.querySelector(".errorPhone").innerHTML = "Phone Number must have only number";
         return false
     }
     else if(phone.value.length > 10 || phone.value.length < 8){
-        document.querySelector(".errorPhone").innerHTML = "Phone Number most have 8-9 number";
+        document.querySelector(".errorPhone").innerHTML = "Phone Number must have 8-9 number";
         return false
     }
     else{
@@ -67,11 +67,14 @@ function validatingEmail(){
     }
 
 }
-function clearFrom(){
+function clearForm(){
     name.value = "";
     phone.value = "";
     email.value = "";
 }
+
+
+
 function showUserInfo(){
     tbody.innerHTML = "";
     listArray.forEach((obj,index)=>{
@@ -91,6 +94,9 @@ function showUserInfo(){
     })
 }
 showUserInfo();
+
+
+
 form.addEventListener("click",function(e){
     let element = e.target;
     if(element.classList.contains("btn-add")){
@@ -105,7 +111,7 @@ form.addEventListener("click",function(e){
             newObject.date = getDate();
             listArray.push(newObject);
             
-            clearFrom();
+            clearForm();
             showUserInfo();
             localStorage.setItem("userInfo",JSON.stringify(listArray));
         }
@@ -119,7 +125,7 @@ form.addEventListener("click",function(e){
             listArray[index].name = name.value;
             listArray[index].phone = phone.value;
             listArray[index].email = email.value;
-            clearFrom();
+            clearForm();
             showUserInfo();
             btn.classList.remove("edit");
             btn.classList.add("btn-add");
@@ -130,6 +136,7 @@ form.addEventListener("click",function(e){
     }
     
 })
+
 tbody.addEventListener("click",function(e){
     let element = e.target;
     if(element.classList.contains("btn-delete")){
