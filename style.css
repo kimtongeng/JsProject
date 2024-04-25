@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form{
+    width: 25%;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 50px;
+    box-shadow:-10px -10px 50px 10px rgb(255, 255, 255), 10px 10px 50px 10px rgba(0, 0, 0, 0.293) ;
+}
+.btn{
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+}
+th{
+    width: 16.66%;
+}
+td{
+    align-content: center;
+}
+td .btn{
+    width: 49%;
+}
+.errorName,.errorPhone,.errorEmail{
+    font-size: 13px;
+    color: red;
+
+}
